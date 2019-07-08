@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "glassdoor",
+  "version": "1.0.0",
+  "name": "Glass Doors",
+  "description": "More Prettier Doors",
+  "authors": [
+    "kyrptonaught"
+  ],
+  "contact": {
+    "homepage": "https://github.com/kyrptonaught/Inventory-Sorter",
+    "sources": "https://github.com/kyrptonaught/Inventory-Sorter"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/glassdoor/icon.png",
+  "environment": "*",
+  "mixins": [
+    {
+      "config": "net.kyrptonaught.glassdoor.json",
+      "environment": "client"
+    }
+  ],
+  "entrypoints": {
+    "main": [
+      "net.kyrptonaught.glassdoor.GlassDoorMod"
+    ],
+    "client": [
+      "net.kyrptonaught.glassdoor.GlassDoorMod"
+    ]
+  },
+  "requires": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
