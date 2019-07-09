@@ -15,17 +15,17 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
 
 @Mixin(DoorBlock.class)
 public abstract class MixinDoorBlock extends Block {
     public MixinDoorBlock(Settings block$Settings_1) {
         super(block$Settings_1);
-    }
 
+    }
     @Inject(method = "activate", at = @At("HEAD"), cancellable = true)
     public void glassdoor$activate(BlockState blockState_1, World world_1, BlockPos blockPos_1, PlayerEntity playerEntity_1, Hand hand_1, BlockHitResult blockHitResult_1, CallbackInfoReturnable<Boolean> callbackInfoReturnable) {
         ItemStack hand = playerEntity_1.inventory.getMainHandStack();

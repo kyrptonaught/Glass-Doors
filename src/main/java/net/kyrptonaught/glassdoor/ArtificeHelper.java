@@ -10,7 +10,7 @@ import net.minecraft.util.registry.Registry;
 
 class ArtificeHelper {
     static void generateRecipies() {
-        String[] woodtype = {"oak", "spruce", "birch", "acacia", "jungle", "dark_oak"};
+        String[] woodtype = {"oak", "spruce", "birch", "acacia", "jungle", "dark_oak" , "iron"};
         Artifice.registerData("", pack -> {
             registerRecipe(pack, "glassoak", ModBlocks.oak_glassdoor, Blocks.OAK_DOOR);
             registerRecipe(pack, "glassspruce", ModBlocks.spruce_glassdoor, Blocks.SPRUCE_DOOR);
@@ -18,6 +18,7 @@ class ArtificeHelper {
             registerRecipe(pack, "glassbirch", ModBlocks.birch_glassdoor, Blocks.BIRCH_DOOR);
             registerRecipe(pack, "glassjungle", ModBlocks.jungle_glassdoor, Blocks.JUNGLE_DOOR);
             registerRecipe(pack, "glassdarkoak", ModBlocks.dark_oak_glassdoor, Blocks.DARK_OAK_DOOR);
+            registerRecipe(pack,"glassiron", ModBlocks.iron_glassdoor,Blocks.IRON_DOOR);
             for (String wood : woodtype)
                 pack.add(new Identifier(GlassDoorMod.MOD_ID, "loot_tables/blocks/" + wood + "_glassdoor.json"), new StringResource(generateLootTable(wood)));
         });
@@ -32,7 +33,7 @@ class ArtificeHelper {
     }
 
     static void generateAssets() {
-        String[] woodtype = {"oak", "spruce", "birch", "acacia", "jungle", "dark_oak"};
+        String[] woodtype = {"oak", "spruce", "birch", "acacia", "jungle", "dark_oak", "iron"};
         Artifice.registerAssets(GlassDoorMod.MOD_ID + ":glassdoors", pack -> {
             for (String wood : woodtype) {
                 pack.add(new Identifier(GlassDoorMod.MOD_ID, "blockstates/" + wood + "_glassdoor.json"), new StringResource(generateBlockState(wood)));

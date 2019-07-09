@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "glassdoor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Glass Doors",
   "description": "More Prettier Doors",
   "authors": [
@@ -16,8 +16,7 @@
   "environment": "*",
   "mixins": [
     {
-      "config": "net.kyrptonaught.glassdoor.json",
-      "environment": "client"
+      "config": "net.kyrptonaught.glassdoor.json"
     }
   ],
   "entrypoints": {

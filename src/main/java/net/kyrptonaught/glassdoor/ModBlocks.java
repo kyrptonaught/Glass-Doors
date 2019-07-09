@@ -9,6 +9,7 @@ public class ModBlocks {
     static BlockGlassDoor acacia_glassdoor;
     static BlockGlassDoor jungle_glassdoor;
     static BlockGlassDoor dark_oak_glassdoor;
+    static BlockGlassDoor iron_glassdoor;
 
     static void register() {
         oak_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.OAK_DOOR), "oak_glassdoor");
@@ -17,6 +18,8 @@ public class ModBlocks {
         acacia_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.ACACIA_DOOR), "acacia_glassdoor");
         jungle_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.JUNGLE_DOOR), "jungle_glassdoor");
         dark_oak_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.DARK_OAK_DOOR), "dark_oak_glassdoor");
+        iron_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.IRON_DOOR), "iron_glassdoor");
+        
     }
 
 
@@ -25,10 +28,11 @@ public class ModBlocks {
         String type = copyState.getBlock().toString();
         BlockState newState = oak_glassdoor.getDefaultState();
         if (type.contains("jungle")) newState = jungle_glassdoor.getDefaultState();
-        if (type.contains("birch")) newState = birch_glassdoor.getDefaultState();
-        if (type.contains("spruce")) newState = spruce_glassdoor.getDefaultState();
-        if (type.contains("acacia")) newState = acacia_glassdoor.getDefaultState();
-        if (type.contains("dark")) newState = dark_oak_glassdoor.getDefaultState();
+        else if (type.contains("birch")) newState = birch_glassdoor.getDefaultState();
+        else if (type.contains("spruce")) newState = spruce_glassdoor.getDefaultState();
+        else if (type.contains("acacia")) newState = acacia_glassdoor.getDefaultState();
+        else if (type.contains("dark")) newState = dark_oak_glassdoor.getDefaultState();
+        else if (type.contains("iron")) newState = iron_glassdoor.getDefaultState();
         return newState.with(DoorBlock.FACING, copyState.get(DoorBlock.FACING)).with(DoorBlock.HINGE, copyState.get(DoorBlock.HINGE)).with(DoorBlock.OPEN, copyState.get(DoorBlock.OPEN));
     }
 }
