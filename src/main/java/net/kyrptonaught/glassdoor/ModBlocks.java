@@ -1,15 +1,16 @@
 package net.kyrptonaught.glassdoor;
 
 import net.minecraft.block.*;
+import net.minecraft.tag.BlockTags;
 
 public class ModBlocks {
-    static BlockGlassDoor oak_glassdoor;
-    static BlockGlassDoor spruce_glassdoor;
-    static BlockGlassDoor birch_glassdoor;
-    static BlockGlassDoor acacia_glassdoor;
-    static BlockGlassDoor jungle_glassdoor;
-    static BlockGlassDoor dark_oak_glassdoor;
-    static BlockGlassDoor iron_glassdoor;
+    public static BlockGlassDoor oak_glassdoor;
+    public static BlockGlassDoor spruce_glassdoor;
+    public static BlockGlassDoor birch_glassdoor;
+    public static BlockGlassDoor acacia_glassdoor;
+    public static BlockGlassDoor jungle_glassdoor;
+    public static BlockGlassDoor dark_oak_glassdoor;
+    public static BlockGlassDoor iron_glassdoor;
 
     static void register() {
         oak_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.OAK_DOOR), "oak_glassdoor");
@@ -19,7 +20,7 @@ public class ModBlocks {
         jungle_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.JUNGLE_DOOR), "jungle_glassdoor");
         dark_oak_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.DARK_OAK_DOOR), "dark_oak_glassdoor");
         iron_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.IRON_DOOR), "iron_glassdoor");
-        
+        //BlockTags.WOODEN_DOORS.values().add(oak_glassdoor);
     }
 
 

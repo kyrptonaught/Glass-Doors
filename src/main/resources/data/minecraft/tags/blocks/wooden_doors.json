@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "glassdoor:oak_glassdoor",
+    "glassdoor:spruce_glassdoor",
+    "glassdoor:birch_glassdoor",
+    "glassdoor:jungle_glassdoor",
+    "glassdoor:acacia_glassdoor",
+    "glassdoor:dark_oak_glassdoor"
+  ]
+}
