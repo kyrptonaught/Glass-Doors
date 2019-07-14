@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "glassdoor",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "name": "Glass Doors",
   "description": "More Prettier Doors",
   "authors": [
@@ -11,7 +11,7 @@
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/glass-doors",
     "sources": "https://github.com/kyrptonaught/Glass-Doors"
   },
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/glassdoor/icon.png",
   "environment": "*",
   "mixins": [

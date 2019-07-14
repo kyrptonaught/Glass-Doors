@@ -1,7 +1,8 @@
 {
   "replace": false,
   "values": [
+    "glassdoor:iron_glassdoor",
     "#minecraft:wooden_doors",
-    "glassdoor:iron_glassdoor"
+    "minecraft:iron_door"
   ]
 }
