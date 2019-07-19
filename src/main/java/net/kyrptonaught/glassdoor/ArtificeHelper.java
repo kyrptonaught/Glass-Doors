@@ -3,9 +3,9 @@ package net.kyrptonaught.glassdoor;
 import com.swordglowsblue.artifice.api.Artifice;
 import com.swordglowsblue.artifice.api.ArtificeResourcePack;
 import com.swordglowsblue.artifice.api.resource.TemplateResource;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.server.command.CommandSource;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 
 class ArtificeHelper {
     static void generateRecipies() {
-        new TemplateResource();
         String[] woodtype = {"oak", "spruce", "birch", "acacia", "jungle", "dark_oak", "iron"};
         Artifice.registerData("", pack -> {
             registerRecipe(pack, "glassoak", ModBlocks.oak_glassdoor, Blocks.OAK_DOOR);
