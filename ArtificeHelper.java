@@ -3,6 +3,7 @@ package net.kyrptonaught.glassdoor;
 import com.swordglowsblue.artifice.api.Artifice;
 import com.swordglowsblue.artifice.api.ArtificeResourcePack;
 import com.swordglowsblue.artifice.api.resource.TemplateResource;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.server.command.CommandSource;
@@ -10,6 +11,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.stream.Collectors;
 
 class ArtificeHelper {
@@ -26,6 +28,19 @@ class ArtificeHelper {
             String templateFile = readTemplateFile("loot_door");
             for (String wood : woodtype)
                 pack.add(new Identifier(GlassDoorMod.MOD_ID, "loot_tables/blocks/" + wood + "_glassdoor.json"), new TemplateResource(templateFile).expand("woodtype", wood));
+        });
+        File Path = new File(FabricLoader.getInstance().getGameDirectory() +"/dump");
+        try {
+            Files.createDirectories(Path.toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Artifice.DATA.iterator().forEachRemaining(pack -> {
+            try {
+                pack.dumpResources(Path.getPath());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
     }
 
@@ -68,6 +83,19 @@ class ArtificeHelper {
                     model.texture("bottom", new Identifier(GlassDoorMod.MOD_ID, "block/" + wood + "_door_bottom"));
                     model.texture("top", new Identifier(GlassDoorMod.MOD_ID, "block/" + wood + "_door_top"));
                 });
+            }
+        });
+        File Path = new File(FabricLoader.getInstance().getGameDirectory() +"/dump");
+        try {
+            Files.createDirectories(Path.toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Artifice.ASSETS.iterator().forEachRemaining(pack -> {
+            try {
+                pack.dumpResources(Path.getPath());
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
     }

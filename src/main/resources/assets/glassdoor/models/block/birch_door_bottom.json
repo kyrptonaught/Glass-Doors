@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom",
+  "textures": {
+    "bottom": "glassdoor:block/birch_door_bottom",
+    "top": "glassdoor:block/birch_door_top"
+  }
+}

@@ -26,6 +26,7 @@ public abstract class MixinDoorBlock extends Block {
         super(block$Settings_1);
 
     }
+
     @Inject(method = "activate", at = @At("HEAD"), cancellable = true)
     public void glassdoor$activate(BlockState blockState_1, World world_1, BlockPos blockPos_1, PlayerEntity playerEntity_1, Hand hand_1, BlockHitResult blockHitResult_1, CallbackInfoReturnable<Boolean> callbackInfoReturnable) {
         ItemStack hand = playerEntity_1.inventory.getMainHandStack();

@@ -1,7 +1,6 @@
 package net.kyrptonaught.glassdoor;
 
 import net.minecraft.block.*;
-import net.minecraft.tag.BlockTags;
 
 public class ModBlocks {
     public static BlockGlassDoor oak_glassdoor;

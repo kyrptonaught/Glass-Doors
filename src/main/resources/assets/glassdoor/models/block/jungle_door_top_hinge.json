@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_rh",
+  "textures": {
+    "bottom": "glassdoor:block/jungle_door_bottom",
+    "top": "glassdoor:block/jungle_door_top"
+  }
+}

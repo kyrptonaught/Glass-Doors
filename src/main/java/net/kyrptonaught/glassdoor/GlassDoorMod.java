@@ -10,11 +10,11 @@ public class GlassDoorMod implements ModInitializer, ClientModInitializer {
     @Override
     public void onInitialize() {
         ModBlocks.register();
-        ArtificeHelper.generateRecipies();
+        // ArtificeHelper.generateRecipies();
     }
 
     @Override
     public void onInitializeClient() {
-        ArtificeHelper.generateAssets();
+        //ArtificeHelper.generateAssets();
     }
 }

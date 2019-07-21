@@ -21,10 +21,6 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}"
 	modCompile "net.fabricmc:fabric-loader:${project.loader_version}"
 	modCompile "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	modCompile "io.github.prospector.modmenu:ModMenu:1.+"
-
-	modImplementation "com.github.swordglowsblue:artifice:${project.artifice_version}"
-include "com.github.swordglowsblue:artifice:${project.artifice_version}"
 }
 
 processResources {
