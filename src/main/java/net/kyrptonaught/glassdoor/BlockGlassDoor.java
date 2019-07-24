@@ -26,7 +26,6 @@ public class BlockGlassDoor extends DoorBlock {
     @Override
     public boolean activate(BlockState blockState_1, World world_1, BlockPos blockPos_1, PlayerEntity playerEntity_1, Hand hand_1, BlockHitResult blockHitResult_1) {
         super.activate(blockState_1, world_1, blockPos_1, playerEntity_1, hand_1, blockHitResult_1);
-        BlockTags.WOODEN_DOORS.values().forEach(block -> System.out.println(block.toString()));
         return true;
     }
 }
