@@ -38,7 +38,7 @@ public abstract class MixinDoorBlock extends Block {
             world_1.setBlockState(blockPos_1.up(), Blocks.AIR.getDefaultState());
             world_1.setBlockState(blockPos_1, ModBlocks.copyState(lowerState).with(DoorBlock.HALF, DoubleBlockHalf.LOWER));
             world_1.setBlockState(blockPos_1.up(), ModBlocks.copyState(upperState).with(DoorBlock.HALF, DoubleBlockHalf.UPPER));
-            if (!playerEntity_1.isCreative()) hand.increment(-1);
+            if (!playerEntity_1.isCreative()) hand.decrement(1);
             callbackInfoReturnable.setReturnValue(true);
         }
     }
