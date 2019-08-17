@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "minecraft:spruce_door",
+    "count": 1
+  },
+  "ingredients": [
+    {
+      "item": "glassdoor:spruce_glassdoor"
+    }
+  ]
+}
