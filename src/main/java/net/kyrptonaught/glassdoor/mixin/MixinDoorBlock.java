@@ -1,8 +1,7 @@
 package net.kyrptonaught.glassdoor.mixin;
 
 import net.kyrptonaught.glassdoor.BlockGlassDoor;
-import net.kyrptonaught.glassdoor.ModBlocks;
-import net.minecraft.block.Block;
+import net.kyrptonaught.glassdoor.GlassDoorMod;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.DoorBlock;
@@ -22,25 +21,25 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 
 @Mixin(DoorBlock.class)
-public abstract class MixinDoorBlock extends Block {
-    public MixinDoorBlock(Settings block$Settings_1) {
-        super(block$Settings_1);
-
-    }
+public abstract class MixinDoorBlock {
 
     @Inject(method = "onUse", at = @At("HEAD"), cancellable = true)
-    public void glassdoor$activate(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> callbackInfoReturnable) {
+    private void glassdoor$activate(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> callbackInfoReturnable) {
         ItemStack heldStack = player.inventory.getMainHandStack();
         if (!(state.getBlock() instanceof BlockGlassDoor) && heldStack.getItem() == Items.GLASS_PANE) {
             if (state.get(DoorBlock.HALF) == DoubleBlockHalf.UPPER) pos = pos.down();
-            BlockState lowerState = ModBlocks.copyState(state);
-            BlockState upperState = ModBlocks.copyState(world.getBlockState(pos.up()));
+
+            BlockState glassDoorState = GlassDoorMod.copyState(state);
+
             world.setBlockState(pos, Blocks.AIR.getDefaultState());
             world.setBlockState(pos.up(), Blocks.AIR.getDefaultState());
-            world.setBlockState(pos, ModBlocks.copyState(lowerState).with(DoorBlock.HALF, DoubleBlockHalf.LOWER));
-            world.setBlockState(pos.up(), ModBlocks.copyState(upperState).with(DoorBlock.HALF, DoubleBlockHalf.UPPER));
+
+            world.setBlockState(pos, glassDoorState.with(DoorBlock.HALF, DoubleBlockHalf.LOWER));
+            world.setBlockState(pos.up(), glassDoorState.with(DoorBlock.HALF, DoubleBlockHalf.UPPER));
+
             if (!player.isCreative()) heldStack.decrement(1);
             callbackInfoReturnable.setReturnValue(ActionResult.SUCCESS);
+
         }
     }
 }
