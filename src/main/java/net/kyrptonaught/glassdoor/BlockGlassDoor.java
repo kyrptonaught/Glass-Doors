@@ -1,8 +1,6 @@
 package net.kyrptonaught.glassdoor;
 
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.DoorBlock;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.TallBlockItem;
@@ -16,6 +14,5 @@ public class BlockGlassDoor extends DoorBlock {
         super(block$Settings_1);
         Registry.register(Registry.BLOCK, new Identifier(GlassDoorMod.MOD_ID, name), this);
         Registry.register(Registry.ITEM, new Identifier(GlassDoorMod.MOD_ID, name), new TallBlockItem(this, new Item.Settings().group(ItemGroup.REDSTONE)));
-        BlockRenderLayerMap.INSTANCE.putBlock(this, RenderLayer.getCutout());
     }
 }

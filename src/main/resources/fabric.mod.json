@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "glassdoor",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "name": "Glass Doors",
   "description": "More Prettier Doors",
   "authors": [
@@ -21,6 +21,9 @@
   ],
   "entrypoints": {
     "main": [
+      "net.kyrptonaught.glassdoor.GlassDoorMod"
+    ],
+    "client" : [
       "net.kyrptonaught.glassdoor.GlassDoorMod"
     ]
   },

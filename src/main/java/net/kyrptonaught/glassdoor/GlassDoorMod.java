@@ -1,13 +1,16 @@
 package net.kyrptonaught.glassdoor;
 
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.DoorBlock;
+import net.minecraft.client.render.RenderLayer;
 
 
-public class GlassDoorMod implements ModInitializer {
+public class GlassDoorMod implements ModInitializer, ClientModInitializer {
     static final String MOD_ID = "glassdoor";
 
     public static BlockGlassDoor oak_glassdoor;
@@ -28,7 +31,16 @@ public class GlassDoorMod implements ModInitializer {
         dark_oak_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.DARK_OAK_DOOR), "dark_oak_glassdoor");
         iron_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.IRON_DOOR), "iron_glassdoor");
     }
-
+    @Override
+    public void onInitializeClient() {
+        BlockRenderLayerMap.INSTANCE.putBlock(oak_glassdoor, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(spruce_glassdoor, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(birch_glassdoor, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(acacia_glassdoor, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(jungle_glassdoor, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(dark_oak_glassdoor, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(iron_glassdoor, RenderLayer.getCutout());
+    }
     public static BlockState copyState(BlockState copyState) {
         if (!(copyState.getBlock() instanceof DoorBlock)) return copyState;
 
@@ -41,4 +53,5 @@ public class GlassDoorMod implements ModInitializer {
         else if (copyState.getBlock().equals(Blocks.IRON_DOOR)) newState = iron_glassdoor.getDefaultState();
         return newState.with(DoorBlock.FACING, copyState.get(DoorBlock.FACING)).with(DoorBlock.HINGE, copyState.get(DoorBlock.HINGE)).with(DoorBlock.OPEN, copyState.get(DoorBlock.OPEN));
     }
+
 }
