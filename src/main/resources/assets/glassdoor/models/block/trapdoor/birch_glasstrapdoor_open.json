@@ -1,0 +1,7 @@
+{
+  "parent": "glassdoor:block/template/template_trapdoor_open",
+  "textures": {
+    "texture": "glassdoor:block/birch_glasstrapdoor",
+    "texture2": "minecraft:block/birch_trapdoor"
+  }
+}
