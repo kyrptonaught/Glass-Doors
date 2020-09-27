@@ -3,7 +3,8 @@
   "package": "net.kyrptonaught.glassdoor.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinDoorBlock"
+    "MixinDoorBlock",
+    "MixinTrapDoorBlock"
   ],
   "injectors": {
     "defaultRequire": 1

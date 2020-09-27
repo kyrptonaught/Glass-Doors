@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "minecraft:birch_trapdoor",
+    "count": 1
+  },
+  "ingredients": [
+    {
+      "item": "glassdoor:birch_glasstrapdoor"
+    }
+  ]
+}

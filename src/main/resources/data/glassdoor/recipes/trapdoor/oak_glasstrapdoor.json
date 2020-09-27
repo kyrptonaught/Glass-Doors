@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "glassdoor:oak_glasstrapdoor",
+    "count": 1
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:oak_trapdoor"
+    },
+    {
+      "item": "minecraft:glass_pane"
+    }
+  ]
+}

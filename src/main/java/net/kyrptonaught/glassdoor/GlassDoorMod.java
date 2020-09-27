@@ -3,15 +3,8 @@ package net.kyrptonaught.glassdoor;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.DoorBlock;
+import net.minecraft.block.*;
 import net.minecraft.client.render.RenderLayer;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.nio.file.FileSystem;
 
 
 public class GlassDoorMod implements ModInitializer, ClientModInitializer {
@@ -68,45 +61,7 @@ public class GlassDoorMod implements ModInitializer, ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(jungle_glasstrapdoor, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(dark_oak_glasstrapdoor, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(iron_glasstrapdoor, RenderLayer.getCutout());
-/*
-        String[] woods = {"oak", "spruce", "birch", "acacia", "jungle", "dark_oak", "iron"};
 
-            for (String wood : woods) {
-                File file = new File("C:\\Users\\anthony\\Desktop\\Minecraft Mod Dev\\GlassDoor-1.16\\src\\main\\resources\\assets\\glassdoor\\models\\item\\" + wood + "_glasstrapdoor.json");
-                try (FileOutputStream out = new FileOutputStream(file, false)) {
-                    if (!file.exists())
-                        file.createNewFile();
-                    String output = "{\n" +
-                            "  \"parent\": \"glassdoor:block/trapdoor/"+wood+"_glasstrapdoor_bottom\"\n" +
-                            "}";
-                    System.out.println(output);
-                    out.write(output.getBytes());
-                } catch (Exception e) {
-                }
-            }
-        /*
-        String[] woods = {"oak", "spruce", "birch", "acacia", "jungle", "dark_oak", "iron"};
-        String[] types = {"bottom", "open", "top"};
-        for (String type : types)
-            for (String wood : woods) {
-                File file = new File("C:\\Users\\anthony\\Desktop\\Minecraft Mod Dev\\GlassDoor-1.16\\src\\main\\resources\\assets\\glassdoor\\models\\block\\trapdoor\\" + wood + "_glasstrapdoor_" + type + ".json");
-                try (FileOutputStream out = new FileOutputStream(file, false)) {
-                    if (!file.exists())
-                        file.createNewFile();
-                    String output = "{\n" +
-                            "  \"parent\": \"glassdoor:block/template/template_trapdoor_"+type+"\",\n" +
-                            "  \"textures\": {\n" +
-                            "    \"texture\": \"glassdoor:block/"+wood+"_glasstrapdoor\",\n" +
-                            "    \"texture2\": \"minecraft:block/"+wood+"_trapdoor\"\n" +
-                            "  }\n" +
-                            "}";
-                    System.out.println(output);
-                    out.write(output.getBytes());
-                } catch (Exception e) {
-                }
-            }
-
-         */
     }
     public static BlockState copyState(BlockState copyState) {
         if (!(copyState.getBlock() instanceof DoorBlock)) return copyState;
@@ -120,5 +75,16 @@ public class GlassDoorMod implements ModInitializer, ClientModInitializer {
         else if (copyState.getBlock().equals(Blocks.IRON_DOOR)) newState = iron_glassdoor.getDefaultState();
         return newState.with(DoorBlock.FACING, copyState.get(DoorBlock.FACING)).with(DoorBlock.HINGE, copyState.get(DoorBlock.HINGE)).with(DoorBlock.OPEN, copyState.get(DoorBlock.OPEN));
     }
+    public static BlockState copytrapdoorState(BlockState copyState) {
+        if (!(copyState.getBlock() instanceof TrapdoorBlock)) return copyState;
 
+        BlockState newState = oak_glasstrapdoor.getDefaultState();
+        if (copyState.getBlock().equals(Blocks.JUNGLE_TRAPDOOR)) newState = jungle_glasstrapdoor.getDefaultState();
+        else if (copyState.getBlock().equals(Blocks.BIRCH_TRAPDOOR)) newState = birch_glasstrapdoor.getDefaultState();
+        else if (copyState.getBlock().equals(Blocks.SPRUCE_TRAPDOOR)) newState = spruce_glasstrapdoor.getDefaultState();
+        else if (copyState.getBlock().equals(Blocks.ACACIA_TRAPDOOR)) newState = acacia_glasstrapdoor.getDefaultState();
+        else if (copyState.getBlock().equals(Blocks.DARK_OAK_TRAPDOOR)) newState = dark_oak_glasstrapdoor.getDefaultState();
+        else if (copyState.getBlock().equals(Blocks.IRON_TRAPDOOR)) newState = iron_glasstrapdoor.getDefaultState();
+        return newState.with(TrapdoorBlock.FACING, copyState.get(TrapdoorBlock.FACING)).with(TrapdoorBlock.OPEN, copyState.get(TrapdoorBlock.OPEN)).with(TrapdoorBlock.HALF, copyState.get(TrapdoorBlock.HALF)).with(TrapdoorBlock.POWERED, copyState.get(TrapdoorBlock.POWERED)).with(TrapdoorBlock.WATERLOGGED, copyState.get(TrapdoorBlock.WATERLOGGED));
+    }
 }
