@@ -23,7 +23,7 @@ public abstract class MixinTrapDoorBlock {
 
     @Inject(method = "onUse", at = @At("HEAD"), cancellable = true)
     private void glassdoor$activate(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> callbackInfoReturnable) {
-        ItemStack heldStack = player.inventory.getMainHandStack();
+        ItemStack heldStack = player.getInventory().getMainHandStack();
         if (!(state.getBlock() instanceof BlockGlassTrapDoor) && heldStack.getItem() == Items.GLASS_PANE) {
 
             BlockState glassDoorState = GlassDoorMod.copytrapdoorState(state);
