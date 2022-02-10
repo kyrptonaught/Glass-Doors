@@ -25,7 +25,7 @@ public abstract class MixinDoorBlock {
 
     @Inject(method = "onUse", at = @At("HEAD"), cancellable = true)
     private void glassdoor$activate(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> callbackInfoReturnable) {
-        ItemStack heldStack = player.inventory.getMainHandStack();
+        ItemStack heldStack = player.getInventory().getMainHandStack();
         if (!(state.getBlock() instanceof BlockGlassDoor) && heldStack.getItem() == Items.GLASS_PANE) {
             if (state.get(DoorBlock.HALF) == DoubleBlockHalf.UPPER) pos = pos.down();
 
