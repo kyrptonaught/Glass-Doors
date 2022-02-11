@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "glassdoor:oak_glasstrapdoor",
+    "glassdoor:spruce_glasstrapdoor",
+    "glassdoor:birch_glasstrapdoor",
+    "glassdoor:jungle_glasstrapdoor",
+    "glassdoor:acacia_glasstrapdoor",
+    "glassdoor:dark_oak_glasstrapdoor",
+    "glassdoor:crimson_glasstrapdoor",
+    "glassdoor:warped_glasstrapdoor"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "glassdoor:crimson_glassdoor",
+    "glassdoor:warped_glassdoor",
+
+    "glassdoor:crimson_glasstrapdoor",
+    "glassdoor:warped_glasstrapdoor"
+  ]
+}

@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 public class DataGenerator {
-    static String[] woods = {"oak", "spruce", "birch", "acacia", "jungle", "dark_oak", "iron"};
+    static String[] woods = {"oak", "spruce", "birch", "acacia", "jungle", "dark_oak", "iron", "crimson", "warped"};
     static String[] types = {"bottom", "open", "top"};
 
     public static void genModels() {
@@ -42,7 +42,7 @@ public class DataGenerator {
         }
     }
 
-    public static void genRecipies() {
+    public static void genRecipes() {
         for (String wood : woods) {
             File file = new File("C:\\Users\\anthony\\Desktop\\Minecraft Mod Dev\\GlassDoor-1.16\\src\\main\\resources\\data\\glassdoor\\recipes\\trapdoor\\" + wood + "_glasstrapdoor.json");
             try (FileOutputStream out = new FileOutputStream(file, false)) {
@@ -69,7 +69,7 @@ public class DataGenerator {
         }
     }
 
-    public static void genRecipiesReverse() {
+    public static void genRecipesReverse() {
         for (String wood : woods) {
             File file = new File("C:\\Users\\anthony\\Desktop\\Minecraft Mod Dev\\GlassDoor-1.16\\src\\main\\resources\\data\\glassdoor\\recipes\\reverse\\trapdoor\\" + wood + "_glasstrapdoor.json");
             try (FileOutputStream out = new FileOutputStream(file, false)) {
@@ -92,7 +92,7 @@ public class DataGenerator {
             }
         }
     }
-    public static void genloot() {
+    public static void genLoot() {
         for (String wood : woods) {
             File file = new File("C:\\Users\\anthony\\Desktop\\Minecraft Mod Dev\\GlassDoor-1.16\\src\\main\\resources\\data\\glassdoor\\loot_tables\\blocks\\" + wood + "_glasstrapdoor.json");
             try (FileOutputStream out = new FileOutputStream(file, false)) {

@@ -7,11 +7,7 @@
     "glassdoor:jungle_glassdoor",
     "glassdoor:acacia_glassdoor",
     "glassdoor:dark_oak_glassdoor",
-    "minecraft:oak_door",
-    "minecraft:spruce_door",
-    "minecraft:birch_door",
-    "minecraft:jungle_door",
-    "minecraft:acacia_door",
-    "minecraft:dark_oak_door"
+    "glassdoor:crimson_glassdoor",
+    "glassdoor:warped_glassdoor"
   ]
 }
