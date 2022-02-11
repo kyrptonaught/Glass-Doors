@@ -17,6 +17,8 @@ public class GlassDoorMod implements ModInitializer, ClientModInitializer {
     public static BlockGlassDoor jungle_glassdoor;
     public static BlockGlassDoor dark_oak_glassdoor;
     public static BlockGlassDoor iron_glassdoor;
+    public static BlockGlassDoor crimson_glassdoor;
+    public static BlockGlassDoor warped_glassdoor;
 
     public static BlockGlassTrapDoor oak_glasstrapdoor;
     public static BlockGlassTrapDoor spruce_glasstrapdoor;
@@ -25,6 +27,8 @@ public class GlassDoorMod implements ModInitializer, ClientModInitializer {
     public static BlockGlassTrapDoor jungle_glasstrapdoor;
     public static BlockGlassTrapDoor dark_oak_glasstrapdoor;
     public static BlockGlassTrapDoor iron_glasstrapdoor;
+    public static BlockGlassTrapDoor crimson_glasstrapdoor;
+    public static BlockGlassTrapDoor warped_glasstrapdoor;
 
     @Override
     public void onInitialize() {
@@ -35,6 +39,8 @@ public class GlassDoorMod implements ModInitializer, ClientModInitializer {
         jungle_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.JUNGLE_DOOR), "jungle_glassdoor");
         dark_oak_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.DARK_OAK_DOOR), "dark_oak_glassdoor");
         iron_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.IRON_DOOR), "iron_glassdoor");
+        crimson_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.CRIMSON_DOOR), "crimson_glassdoor");
+        warped_glassdoor = new BlockGlassDoor(Block.Settings.copy(Blocks.CRIMSON_DOOR), "warped_glassdoor");
 
         oak_glasstrapdoor = new BlockGlassTrapDoor(Block.Settings.copy(Blocks.OAK_TRAPDOOR), "oak_glasstrapdoor");
         spruce_glasstrapdoor = new BlockGlassTrapDoor(Block.Settings.copy(Blocks.SPRUCE_TRAPDOOR), "spruce_glasstrapdoor");
@@ -43,6 +49,8 @@ public class GlassDoorMod implements ModInitializer, ClientModInitializer {
         jungle_glasstrapdoor = new BlockGlassTrapDoor(Block.Settings.copy(Blocks.JUNGLE_TRAPDOOR), "jungle_glasstrapdoor");
         dark_oak_glasstrapdoor = new BlockGlassTrapDoor(Block.Settings.copy(Blocks.DARK_OAK_TRAPDOOR), "dark_oak_glasstrapdoor");
         iron_glasstrapdoor = new BlockGlassTrapDoor(Block.Settings.copy(Blocks.IRON_TRAPDOOR), "iron_glasstrapdoor");
+        crimson_glasstrapdoor = new BlockGlassTrapDoor(Block.Settings.copy(Blocks.CRIMSON_TRAPDOOR), "crimson_glasstrapdoor");
+        warped_glasstrapdoor = new BlockGlassTrapDoor(Block.Settings.copy(Blocks.CRIMSON_TRAPDOOR), "warped_glasstrapdoor");
     }
     @Override
     public void onInitializeClient() {
@@ -53,6 +61,8 @@ public class GlassDoorMod implements ModInitializer, ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(jungle_glassdoor, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(dark_oak_glassdoor, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(iron_glassdoor, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(crimson_glassdoor, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(warped_glassdoor, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(oak_glasstrapdoor, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(spruce_glasstrapdoor, RenderLayer.getCutout());
@@ -61,6 +71,8 @@ public class GlassDoorMod implements ModInitializer, ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(jungle_glasstrapdoor, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(dark_oak_glasstrapdoor, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(iron_glasstrapdoor, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(crimson_glasstrapdoor, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(warped_glasstrapdoor, RenderLayer.getCutout());
 
     }
     public static BlockState copyState(BlockState copyState) {
@@ -73,9 +85,11 @@ public class GlassDoorMod implements ModInitializer, ClientModInitializer {
         else if (copyState.getBlock().equals(Blocks.ACACIA_DOOR)) newState = acacia_glassdoor.getDefaultState();
         else if (copyState.getBlock().equals(Blocks.DARK_OAK_DOOR)) newState = dark_oak_glassdoor.getDefaultState();
         else if (copyState.getBlock().equals(Blocks.IRON_DOOR)) newState = iron_glassdoor.getDefaultState();
+        else if (copyState.getBlock().equals(Blocks.CRIMSON_DOOR)) newState = crimson_glassdoor.getDefaultState();
+        else if (copyState.getBlock().equals(Blocks.WARPED_DOOR)) newState = warped_glassdoor.getDefaultState();
         return newState.with(DoorBlock.FACING, copyState.get(DoorBlock.FACING)).with(DoorBlock.HINGE, copyState.get(DoorBlock.HINGE)).with(DoorBlock.OPEN, copyState.get(DoorBlock.OPEN));
     }
-    public static BlockState copytrapdoorState(BlockState copyState) {
+    public static BlockState copyTrapdoorState(BlockState copyState) {
         if (!(copyState.getBlock() instanceof TrapdoorBlock)) return copyState;
 
         BlockState newState = oak_glasstrapdoor.getDefaultState();
@@ -85,6 +99,8 @@ public class GlassDoorMod implements ModInitializer, ClientModInitializer {
         else if (copyState.getBlock().equals(Blocks.ACACIA_TRAPDOOR)) newState = acacia_glasstrapdoor.getDefaultState();
         else if (copyState.getBlock().equals(Blocks.DARK_OAK_TRAPDOOR)) newState = dark_oak_glasstrapdoor.getDefaultState();
         else if (copyState.getBlock().equals(Blocks.IRON_TRAPDOOR)) newState = iron_glasstrapdoor.getDefaultState();
+        else if (copyState.getBlock().equals(Blocks.CRIMSON_TRAPDOOR)) newState = crimson_glasstrapdoor.getDefaultState();
+        else if (copyState.getBlock().equals(Blocks.WARPED_TRAPDOOR)) newState = crimson_glasstrapdoor.getDefaultState();
         return newState.with(TrapdoorBlock.FACING, copyState.get(TrapdoorBlock.FACING)).with(TrapdoorBlock.OPEN, copyState.get(TrapdoorBlock.OPEN)).with(TrapdoorBlock.HALF, copyState.get(TrapdoorBlock.HALF)).with(TrapdoorBlock.POWERED, copyState.get(TrapdoorBlock.POWERED)).with(TrapdoorBlock.WATERLOGGED, copyState.get(TrapdoorBlock.WATERLOGGED));
     }
 }

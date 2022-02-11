@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "glassdoor:crimson_glassdoor",
+    "count": 1
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:crimson_door"
+    },
+    {
+      "item": "minecraft:glass_pane"
+    }
+  ]
+}
