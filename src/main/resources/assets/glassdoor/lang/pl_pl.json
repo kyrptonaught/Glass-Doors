@@ -5,5 +5,12 @@
   "block.glassdoor.acacia_glassdoor": "Akacjowe szklane drzwi",
   "block.glassdoor.jungle_glassdoor": "Dżunglowe szklane drzwi",
   "block.glassdoor.dark_oak_glassdoor": "Ciemnodębowe szklane drzwi",
-  "block.glassdoor.iron_glassdoor": "Żelazne szklane drzwi"
+  "block.glassdoor.iron_glassdoor": "Żelazne szklane drzwi",
+  "block.glassdoor.oak_glasstrapdoor": "Dębowa szklana klapa",
+  "block.glassdoor.spruce_glasstrapdoor": "Świerkowa szklana klapa",
+  "block.glassdoor.birch_glasstrapdoor": "Brzozowa szklana klapa",
+  "block.glassdoor.acacia_glasstrapdoor": "Akacjowa szklana klapa",
+  "block.glassdoor.jungle_glasstrapdoor": "Tropikalna szklana klapa",
+  "block.glassdoor.dark_oak_glasstrapdoor": "Ciemnodębowa szklana klapa",
+  "block.glassdoor.iron_glasstrapdoor": "Żelazna szklana klapa"
 }
